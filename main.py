@@ -23,9 +23,7 @@ def open_image():
         tk_image = ImageTk.PhotoImage(preview_image)
         
         image_label.config(image=tk_image)
-        image_label.image = tk_image
-        status_label.config(text=f"Загружено: {os.path.basename(file_path)}")
-        
+        image_label.image = tk_image        
     except Exception as e:
         messagebox.showerror("Ошибка", f"Не удалось открыть изображение:\n{str(e)}")
 
@@ -110,7 +108,7 @@ def on_closing():
     dialog.wait_window()
 
 root = tk.Tk()
-root.title("Импактор мини")
+root.title("импактор мини")
 try:
     root.iconbitmap("src/icon.ico")
 except:
@@ -155,7 +153,7 @@ select_button.pack(pady=(10, 5), fill=tk.X)
 
 generate_button = tk.Button(
     right_frame,
-    text="сделать гифку",
+    text="Сделать гифку",
     command=generate_gif,
     font=("Arial", 12, "bold"),
     bg="#4CAF50",
